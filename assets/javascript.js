@@ -62,6 +62,7 @@ function showStats(){
 	document.getElementById("sidebarContent").style.marginTop = "150px";
 	document.getElementById("player").style.width = "290px";
 	document.getElementById("skin").style.opacity = "0";
+	document.body.style.overflow = "hidden";
 	let player = document.getElementById("player").value;
 	setTimeout(() => {
 		window.location.search = "?player=" + encodeURIComponent(player);
