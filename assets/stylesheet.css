@@ -1,0 +1,156 @@
+body {
+  background-color: #0d2129;
+  font-family: 'Baloo Tammudu 2', cursive;
+  color: lightgray;
+}
+
+button {
+  font-family: 'Baloo Tammudu 2', cursive;
+  background-color: #163947;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,.12);
+  outline: none;
+  font-size: 18px;
+  color: lightgray;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #122f3a;
+}
+
+#skin {
+  opacity: 0;
+  transition: opacity 0.5s ease 0.8s;
+}
+
+#sidebar {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: #09171c;
+  padding-top: 20px;
+  transition: width 0.5s;
+}
+
+#sidebarContent {
+  margin-top: 150px;
+  padding: 20px;
+  text-align: center;
+  transform: scale(1.75);
+  transition: transform 0.5s, margin-top 0.5s;
+}
+
+#player {
+  font-family: "Courier New", Courier, monospace;
+  width: 290px;
+  background-color: #1c485a;
+  border: 1px solid black;
+  color: lightgray;
+  transition: width 0.5s;
+}
+
+#player:hover {
+  background-color: #225a70;
+}
+
+#player:focus {
+  outline: none;
+  background-color: #296e8a;
+}
+
+#main {
+  margin-left: 200px;
+}
+
+#toggle {
+  margin: 10px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  padding: 15px;
+  right: 40px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  background-color: #215468;
+}
+
+footer {
+  background-color: rgba(9, 25, 31, 0.9);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 18px;
+}
+
+.footerText {
+  font-size: 13px;
+}
+
+#showStats {
+  width: 25%;
+  padding: 10px 18px 5px;
+  text-align: center;
+  font-size: 18px;
+  margin: auto;
+  display: block;
+}
+
+.collapsible {
+  padding: 15px 10px 5px 18px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+}
+
+.collapsible:after {
+  content: '\02795';
+  float: right;
+  margin-left: 5px;
+}
+
+.content {
+  padding: 0 18px;
+  background-color: #031a24;
+  max-height: 0px;
+  overflow-y: hidden;
+  margin: 0 0 18px 18px;
+  box-shadow: 0 4px 20px 0 rgba(255, 255, 255, 0.1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: max-height .2s ease-out;
+}
+
+@keyframes blink { 
+  0% { box-shadow: 0 4px 20px 0 rgba(255, 255, 255, 0.1); }
+  20% { box-shadow: 0 4px 20px 0 rgba(255, 255, 255, 1); }
+  100% { box-shadow: 0 4px 20px 0 rgba(255, 255, 255, 0.1); }
+}
+
+.active:after {
+  content: "\2796";
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d272b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d3e45;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #243a42;
+}
