@@ -1,6 +1,7 @@
 async function loadEvents(){
 	document.getElementById("toggle").addEventListener("click", toggleCollapse);
 	document.getElementById("search").addEventListener("click", showStats);
+	document.getElementById("player").addEventListener("keyup", enterName);
 
 	let params = new URLSearchParams(window.location.search);
 	let player = params.get('player');
@@ -41,10 +42,6 @@ async function loadEvents(){
 	}
 	main.appendChild(document.createElement("hr"));
 	addCollapsible("Raw Data", "<pre>" + JSON.stringify(json, null, 4) + "</pre>", document.getElementById("main"));
-	for(let i = 0; i < 3; i++){
-		let breakNode = document.createElement("br");
-		main.appendChild(breakNode);
-	}
 	document.getElementById("toggle").style.display = "block";
 	document.getElementById("sidebar").style.width = "200px";
 	document.getElementById("sidebarContent").style.transform = "scale(1)";
@@ -53,6 +50,13 @@ async function loadEvents(){
 	document.getElementById("skin").style.opacity = "1";
 	clearInterval(loading);
 	document.getElementById("title").innerHTML = "Player name or UUID"
+}
+
+function enterName(event) {
+	if(event.keyCode === 13) {
+		event.preventDefault();
+		document.getElementById("search").click();
+	}
 }
 
 function showStats(){
@@ -235,9 +239,5 @@ function updateParentHeight(content) {
 		updateParentHeight(parent);
 	}
 }
-
-window.onerror = ((error) => {
-	console.log(error);
-})
 
 window.onload = loadEvents;
