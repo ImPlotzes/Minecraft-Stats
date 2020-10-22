@@ -44,6 +44,7 @@ async function loadEvents(){
 	addCollapsible("Raw Data", "<pre>" + JSON.stringify(json, null, 4) + "</pre>", document.getElementById("main"));
 	document.getElementById("toggle").style.display = "block";
 	document.getElementById("sidebar").style.width = "200px";
+	document.getElementById("sidebar").style.backgroundColor = "#09171c";
 	document.getElementById("sidebarContent").style.transform = "scale(1)";
 	document.getElementById("sidebarContent").style.marginTop = "0";
 	document.getElementById("player").style.width = "150px";
@@ -62,6 +63,7 @@ function enterName(event) {
 function showStats(){
 	document.getElementById("toggle").style.display = "none";
 	document.getElementById("sidebar").style.width = "100%";
+	document.getElementById("sidebar").style.backgroundColor = "#0d2129";
 	document.getElementById("sidebarContent").style.transform = "scale(1.75)";
 	document.getElementById("sidebarContent").style.marginTop = "150px";
 	document.getElementById("player").style.width = "290px";
