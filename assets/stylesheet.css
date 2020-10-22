@@ -4,6 +4,13 @@ body {
   color: lightgray;
 }
 
+a {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
 button {
   font-family: 'Baloo Tammudu 2', cursive;
   background-color: #163947;
@@ -31,7 +38,6 @@ button:hover {
   top: 0;
   left: 0;
   overflow-x: hidden;
-  padding-top: 20px;
   transition: width 0.5s, background-color 0.5s;
   background-color: #0d2129;
 }

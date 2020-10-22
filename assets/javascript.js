@@ -28,8 +28,8 @@ async function loadEvents(){
 	let json = await data.text();
 	if(data.status != 200) {
 		json = {
-			"Status": data.status,
-			"Error": data.statusText
+			"status": data.status,
+			"error": data.statusText
 		}
 	} else {
 		json = JSON.parse(json);
