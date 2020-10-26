@@ -24,16 +24,9 @@ async function loadEvents(){
 		}
 	}, 500);
 	
-	let data = await fetch("https://cors-anywhere.herokuapp.com/https://api.ashcon.app/mojang/v2/user/" + player);
+	let data = await fetch("https://api.plotzes.ml?user=" + player);
 	let json = await data.text();
-	if(data.status != 200) {
-		json = {
-			"status": data.status,
-			"error": data.statusText
-		}
-	} else {
-		json = JSON.parse(json);
-	}
+	json = JSON.parse(json);
 	showData(json, document.getElementById("main"));
 	main.appendChild(document.createElement("hr"));
 	for(let i = 0; i < 6; i++){
