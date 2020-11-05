@@ -119,12 +119,12 @@ function showData(json, parent){
 
 function formatString(string){
 	string = JSON.stringify(string, null, 4);
-	string = string.replaceAll("\"", "");
+	string = string.replace(/"/g, "");
 	string = string.toLowerCase();
-	string = string.replaceAll("_", " ");
-	string = string.replaceAll("new", "");
-	string = string.replaceAll("wizard", " Wizard")
-	string = string.replaceAll("capture", "Wizards")
+	string = string.replace(/_/g, " ");
+	string = string.replace(/new/g, "");
+	string = string.replace(/wizard/g, " Wizard")
+	string = string.replace(/capture/g, "Wizards")
 	string = string.replace(/^\s/, "");
 	string = string.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
 	if(isNaN(string) && !isNaN(Date.parse(string)) && string.includes("-")){
