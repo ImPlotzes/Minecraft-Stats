@@ -28,7 +28,6 @@ button:hover {
 
 #skin {
   opacity: 0;
-  transition: opacity 0.5s ease 0.5s;
 }
 
 #sidebar {

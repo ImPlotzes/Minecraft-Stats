@@ -2,6 +2,7 @@ async function loadEvents(){
 	document.getElementById("toggle").addEventListener("click", toggleCollapse);
 	document.getElementById("search").addEventListener("click", showStats);
 	document.getElementById("player").addEventListener("keyup", enterName);
+	
 
 	let params = new URLSearchParams(window.location.search);
 	let player = params.get('player');
@@ -11,6 +12,7 @@ async function loadEvents(){
 		return;
 	}
 
+	document.getElementById("skin").style.transition = "opacity 0.5s ease 0.5s"
 	document.getElementById("player").value = player;
 	let main = document.getElementById("main");
 	main.innerHTML = "";
@@ -54,6 +56,7 @@ function enterName(event) {
 }
 
 function showStats(){
+	document.getElementById("skin").style.transition = "opacity 0.5s ease 0.5s"
 	document.getElementById("toggle").style.display = "none";
 	document.getElementById("sidebar").style.width = "100%";
 	document.getElementById("sidebar").style.backgroundColor = "#0d2129";
@@ -64,7 +67,11 @@ function showStats(){
 	document.body.style.overflow = "hidden";
 	let player = document.getElementById("player").value;
 	setTimeout(() => {
-		window.location.search = "?player=" + encodeURIComponent(player);
+		if(player == "") {
+			window.location.search = "";
+		} else {
+			window.location.search = "?player=" + encodeURIComponent(player);
+		}
 	}, 1100);
 }
 
